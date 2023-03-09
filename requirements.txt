@@ -1,4 +1,4 @@
-asgiref==3.6.0
+#asgiref==3.6.0
 autopep8==2.0.1
 axios==0.1.0
 certifi==2022.12.7
