@@ -15,7 +15,7 @@ def index(request):
                                             +home+'&appid=c37b358f857bb5917b5565975f186470').read()
         except HTTPError as e:
             # sweetify.error(request, title="Error", text="Invalid city", button="OK", timer=2500)
-            print('Error code: ', e.code)
+            print(e.read().decode())
             return redirect('/')
             
         our_data = json.loads(source)

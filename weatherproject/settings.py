@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-fu1-ex(!w-_*qyuk8#u#p)f_p9@@xq#*@j_#8x(k-xu)6!8_q*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['.vercel.app']
 
@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'WeatherApp',
     'rest_framework',
-    #'sweetify',
 ]
 
 MIDDLEWARE = [
@@ -71,7 +70,7 @@ TEMPLATES = [
         },
     },
 ]
-SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
+#SWEETIFY_SWEETALERT_LIBRARY = 'sweetalert2'
 WSGI_APPLICATION = 'weatherproject.wsgi.application'
 
 
