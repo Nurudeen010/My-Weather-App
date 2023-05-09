@@ -9,6 +9,7 @@
     integrity="sha512-dQLT/B7byn2LjN/DN4zeBKpwGV6qbidV0XiMRWQOL7TGrV7FkZFldkGG+DGMU+CQnMTcRZlUI7GMWt1j6akNew=="
     crossorigin="anonymous" />
   <title>Weather App </title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -58,5 +59,7 @@
       {% endif %}
     </div>
 </body>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
+{% load sweetify %}
+{% sweetify %}
 </html>

@@ -1,16 +1,23 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import json
 import urllib.request
+from urllib.error import HTTPError
 from django.utils.datastructures import MultiValueDictKeyError
+import sweetify
 
 def index(request):
     data = {}
     if request.method == 'POST':
         home = request.POST.get('city')
     
-        
-        source = urllib.request.urlopen('https://api.openweathermap.org/data/2.5/weather?q=' 
+        try:
+            source = urllib.request.urlopen('https://api.openweathermap.org/data/2.5/weather?q=' 
                                             +home+'&appid=c37b358f857bb5917b5565975f186470').read()
+        except HTTPError as e:
+            print(e)
+            sweetify.error(request, title="Error", text="Invalid city", button="OK", timer=2500)
+            return redirect('/')
+            
         our_data = json.loads(source)
         data = {
                 "country_code": str(our_data['sys']['country']),
