@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 import json
 import urllib.request
 from django.utils.datastructures import MultiValueDictKeyError
@@ -25,4 +25,5 @@ def index(request):
                 }
     else:
         data = {}
+        return redirect(data)
     return render(request, 'index.html', data)
