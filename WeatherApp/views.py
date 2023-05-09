@@ -3,7 +3,7 @@ import json
 import urllib.request
 from urllib.error import HTTPError
 from django.utils.datastructures import MultiValueDictKeyError
-import sweetify
+#import sweetify
 
 def index(request):
     data = {}
@@ -14,8 +14,8 @@ def index(request):
             source = urllib.request.urlopen('https://api.openweathermap.org/data/2.5/weather?q=' 
                                             +home+'&appid=c37b358f857bb5917b5565975f186470').read()
         except HTTPError as e:
-            print(e)
-            sweetify.error(request, title="Error", text="Invalid city", button="OK", timer=2500)
+            # sweetify.error(request, title="Error", text="Invalid city", button="OK", timer=2500)
+            print('Error code: ', e.code)
             return redirect('/')
             
         our_data = json.loads(source)
