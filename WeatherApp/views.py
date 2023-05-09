@@ -4,6 +4,7 @@ import urllib.request
 from django.utils.datastructures import MultiValueDictKeyError
 
 def index(request):
+    data = {}
     if request.method == 'POST':
         home = request.POST.get('city')
     
