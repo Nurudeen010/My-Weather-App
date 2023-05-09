@@ -1,13 +1,16 @@
 from django.shortcuts import render
 import json
+from . import city.list
 import urllib.request
 from django.utils.datastructures import MultiValueDictKeyError
 
 def index(request):
     if request.method == 'POST':
-        city = request.POST['city']
+        city = request.POST['home']
+    
+        
         source = urllib.request.urlopen('https://api.openweathermap.org/data/2.5/weather?q=' 
-                                            +city+'&units=metric&appid=c37b358f857bb5917b5565975f186470').read()
+                                            +city+'&appid=c37b358f857bb5917b5565975f186470').read()
         our_data = json.loads(source)
         data = {
                 "country_code": str(our_data['sys']['country']),
