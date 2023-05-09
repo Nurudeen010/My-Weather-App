@@ -5,7 +5,7 @@ from django.utils.datastructures import MultiValueDictKeyError
 
 def index(request):
     if request.method == 'POST':
-        home = request.POST.get()
+        home = request.POST.get('city')
     
         
         source = urllib.request.urlopen('https://api.openweathermap.org/data/2.5/weather?q=' 
@@ -23,8 +23,6 @@ def index(request):
                 'description': str(our_data['weather'][0]['description']),
                 'icon': our_data['weather'][0]['icon'],
                 }
-
-        print (data)
     else:
         data = {}
     return render(request, 'index.html', data)
