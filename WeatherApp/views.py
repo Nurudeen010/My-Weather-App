@@ -20,6 +20,7 @@ def index(request):
             
         our_data = json.loads(source)
         data = {
+                "city": str(home),
                 "country_code": str(our_data['sys']['country']),
                 "coordinate": str(our_data['coord']['lon']) + ', '
                 + str(our_data['coord']['lat']),
