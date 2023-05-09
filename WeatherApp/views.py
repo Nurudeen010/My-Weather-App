@@ -1,6 +1,5 @@
 from django.shortcuts import render
 import json
-from . import city.list
 import urllib.request
 from django.utils.datastructures import MultiValueDictKeyError
 
