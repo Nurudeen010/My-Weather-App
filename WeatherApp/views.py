@@ -5,11 +5,11 @@ from django.utils.datastructures import MultiValueDictKeyError
 
 def index(request):
     if request.method == 'POST':
-        city = request.POST['home']
+        home = request.POST['city']
     
         
         source = urllib.request.urlopen('https://api.openweathermap.org/data/2.5/weather?q=' 
-                                            +city+'&appid=c37b358f857bb5917b5565975f186470').read()
+                                            +home+'&appid=c37b358f857bb5917b5565975f186470').read()
         our_data = json.loads(source)
         data = {
                 "country_code": str(our_data['sys']['country']),
