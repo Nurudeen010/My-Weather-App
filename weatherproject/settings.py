@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'WeatherApp',
     'rest_framework',
-    'sweetify',
+    #'sweetify',
 ]
 
 MIDDLEWARE = [
