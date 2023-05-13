@@ -23,7 +23,7 @@
 
   <br /><br /> <br>
   <div id="jumbotron" class="jumbotron" style="text-align: center; margin-top:-50px">
-    <h1 class="display-5">Weather Desktop App </h1>
+    <h1 class="display-5">Weather App </h1>
     <h5>Know the current weather situation in your city</h5>
 
     <img src="{% static 'images/weather.jpg' %}" class="image" style="width:100px; margin-bottom:-50px; ">
@@ -34,7 +34,7 @@
       {% csrf_token %}
       <div class=" input-group">
 
-      <input type="text" class="form-control" name="city" placeholder="Choose Your City ...">
+      <input type="text" class="form-control" name="city" placeholder="Input Your City ...">
       <div class="input-group-btn">
         <button type="submit" class="btn btn-primary">Search</button>
       </div>
